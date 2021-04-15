@@ -5,52 +5,43 @@ import {
   StyleSheet,
   View,
   Button,
-  Text
 } from 'react-native';
+import ImageList from './src/ImageList.js';
 
 
-export default class App extends React.Component {
+class App extends React.Component {
   state = {
     count: 0
-  }
-  CouBut = () => {
-    this.setState({count: this.state.count + 1})
-  }
+  };
 
-render()  {
-  return (
-  <SafeAreaView>
-    <View>
-    <View style = {styles.but}>
-      <Button 
-        color = 'green'
-        title = "Тык"
-        onPress={this.CouBut}
-      />
-    </View>
-      <Text style = {styles.title}>
-        Вы нажали на кнопку <Text style = {styles.ncounter}>{this.state.count}</Text> раз!
-      </Text>
-    </View>
-  </SafeAreaView>
-);
-      };
+  updateCount = () => {
+    this.setState(({count: this.state.count + 1}))
+  }
+  render() {
+    return(
+      <SafeAreaView>
+        <View style = {styles.but}>
+          <Button 
+            color = 'black'
+            title = "Поменять картинки"
+            onPress = {this.updateCount } 
+          />
+        </View>
+        <ImageList count = {this.state.count} />
+      </SafeAreaView>
+    )
+  }
 }
 
+
 const styles = StyleSheet.create({
-  title: {
-    textAlign: 'center',
-    fontSize: 32,
-  },
   but: {
-    width: 170,
-    height: 70,
-    marginTop: 200,
-    marginLeft:100,
+    height: 40,
+    marginTop: 5,
   },
-  ncounter: {
-    textDecorationLine: 'underline',
-    fontStyle: 'italic',
+  vie: {
+    paddingTop: 1,
   }
 });
 
+export default App;
