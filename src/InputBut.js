@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component, useState} from 'react';
 import {
   Alert,
   StyleSheet,
