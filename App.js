@@ -7,6 +7,7 @@ import {
   Button,
 } from 'react-native';
 import ImageList from './src/ImageList.js';
+import InputBut from './src/InputBut.js';
 
 
 class App extends React.Component {
@@ -20,6 +21,9 @@ class App extends React.Component {
   render() {
     return(
       <SafeAreaView>
+        <View>
+          <InputBut />
+        </View>
         <View style = {styles.but}>
           <Button 
             color = 'black'
